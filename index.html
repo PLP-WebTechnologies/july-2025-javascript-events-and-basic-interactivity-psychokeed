@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>🚀 Interactive Web Assignment</h1>
+            <p class="subtitle">JavaScript Event Handling, Interactive Elements & Form Validation</p>
+        </header>
+
+        <!-- Part 1: Counter Game -->
+        <section class="section">
+            <h2>🎮 Part 1: Interactive Counter Game</h2>
+            <div class="counter-container">
+                <div class="counter-display" id="counterDisplay">0</div>
+                <div class="counter-buttons">
+                    <button class="btn" id="incrementBtn">➕ Increment</button>
+                    <button class="btn secondary" id="decrementBtn">➖ Decrement</button>
+                    <button class="btn success" id="resetBtn">🔄 Reset</button>
+                    <button class="btn" id="randomBtn">🎲 Random</button>
+                </div>
+                <p style="margin-top: 20px; color: #fff; opacity: 0.9;">
+                    Click buttons to interact! Try keyboard shortcuts: Space (increment), R (reset)
+                </p>
+            </div>
+        </section>
+
+        <!-- Part 2: FAQ Section -->
+        <section class="section">
+            <h2>❓ Part 2: Collapsible FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" data-faq="1">
+                        <span>What is JavaScript event handling?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" id="faq-1">
+                        Event handling allows JavaScript to respond to user interactions like clicks, keypresses, mouse movements, and form submissions. It makes web pages interactive and dynamic!
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-faq="2">
+                        <span>How does DOM manipulation work?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" id="faq-2">
+                        DOM manipulation lets you dynamically change HTML elements, their content, styles, and attributes using JavaScript. You can add, remove, or modify elements without reloading the page.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-faq="3">
+                        <span>Why is form validation important?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer" id="faq-3">
+                        Form validation ensures data integrity, improves user experience by providing immediate feedback, and prevents invalid data from being submitted to servers.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: Tabs Interface -->
+        <section class="section">
+            <h2>📑 Part 3: Tabbed Interface</h2>
+            <div class="tabs-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="events">🎯 Events</button>
+                    <button class="tab-btn" data-tab="dom">🏗️ DOM</button>
+                    <button class="tab-btn" data-tab="validation">✅ Validation</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab-events">
+                        <h3 style="color: #fff; margin-bottom: 15px;">Event Handling</h3>
+                        <p style="color: #f0f0f0;">
+                            Event handling is the foundation of interactive web development. Common events include:
+                            click, mouseover, keydown, submit, load, and resize. Each event can trigger
+                            JavaScript functions that modify the page content or behavior.
+                        </p>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab-dom">
+                        <h3 style="color: #fff; margin-bottom: 15px;">DOM Manipulation</h3>
+                        <p style="color: #f0f0f0;">
+                            The Document Object Model (DOM) represents the structure of HTML documents.
+                            JavaScript can access and modify DOM elements using methods like getElementById(),
+                            querySelector(), createElement(), and appendChild().
+                        </p>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab-validation">
+                        <h3 style="color: #fff; margin-bottom: 15px;">Form Validation</h3>
+                        <p style="color: #f0f0f0;">
+                            Client-side validation provides immediate feedback to users. Use regular expressions,
+                            conditional statements, and custom validation functions to check email formats,
+                            password strength, and required fields before form submission.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 4: Dropdown Menu -->
+        <section class="section">
+            <h2>📋 Part 4: Interactive Dropdown</h2>
+            <div class="dropdown">
+                <button class="dropdown-btn" id="dropdownBtn">
+                    <span>Choose a Programming Language</span>
+                    <span>▼</span>
+                </button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div class="dropdown-item" data-value="javascript">JavaScript</div>
+                    <div class="dropdown-item" data-value="python">Python</div>
+                    <div class="dropdown-item" data-value="java">Java</div>
+                    <div class="dropdown-item" data-value="csharp">C#</div>
+                    <div class="dropdown-item" data-value="php">PHP</div>
+                </div>
+            </div>
+            <p id="dropdownResult" style="color: #fff; margin-top: 15px; opacity: 0.9;"></p>
+        </section>
+
+        <!-- Part 5: Form Validation -->
+        <section class="section">
+            <h2>📝 Part 5: Advanced Form Validation</h2>
+            <div class="form-container">
+                <form id="registrationForm" novalidate>
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                        <div class="error-message" id="fullNameError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+                        <div class="error-message" id="passwordError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                        <div class="error-message" id="confirmPasswordError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" placeholder="Your age" min="13" max="120">
+                        <div class="error-message" id="ageError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="">Select your country</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="au">Australia</option>
+                            <option value="de">Germany</option>
+                            <option value="fr">France</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">Bio (Optional)</label>
+                        <textarea id="bio" name="bio" placeholder="Tell us about yourself..." rows="4"></textarea>
+                        <div class="error-message" id="bioError"></div>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%; font-size: 1.1rem; padding: 18px;">
+                        🚀 Register Account
+                    </button>
+                </form>
+
+                <div class="success-message" id="successMessage">
+                    🎉 Registration successful! Welcome aboard!
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
